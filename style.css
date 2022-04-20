@@ -1,0 +1,219 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+/* Colors */
+:root
+{
+    --primary-color: #FFF;
+    --secondary-color: #000;
+    --shadow: rgba(0, 0, 0, .5); 
+}
+.dark-theme
+{
+    --primary-color: #000;
+    --secondary-color: #FFF;
+    --shadow: rgba(255, 255, 255, .5);
+}
+/* Base */
+*
+{
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+body
+{
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary-color);
+    width: 100vw;
+    height: 100vh;
+}
+.box
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 80%;
+    height: 300px;
+    margin-top: -100px;
+}
+.box .title
+{
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 30px;
+    color: var(--secondary-color);
+}
+.box .box-input
+{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.box .box-input .input-url
+{
+    padding: 12px 20px;
+    text-align: center;
+    outline: none;
+    width: 40%;
+    border-bottom: 2px solid var(--secondary-color);
+    font-size: 20px;
+    color: var(--secondary-color);
+    background: transparent;
+    transition: .5s;
+}
+.box .box-input .input-url:focus
+{
+    border-bottom: 2px solid var(--secondary-color);
+    transition: .5s;
+}
+::placeholder 
+{
+    color: var(--secondary-color);
+    opacity: 1;
+}
+:-ms-input-placeholder 
+{
+    color: var(--secondary-color);
+}se--secondary-color
+::-ms-input-placeholder 
+{
+    color: var(--black);
+}
+.box .box-input .btn
+{
+    position: relative;
+    padding: 15px 20px;
+    width: 170px;
+    margin-left: 10px;
+    border: 2px solid var(--secondary-color);
+    background: none;
+    font-size: 20px;
+    color: var(--secondary-color);
+    cursor: pointer;
+    transition: color .4s linear;
+}
+.box .box-input .btn:hover
+{
+    color: var(--primary-color);
+    box-shadow: 0 0 10px var(--shadow);
+}
+.box .box-input .btn::before
+{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--secondary-color);
+    z-index: -1;
+    transition: transform .5s;
+    transform-origin: 0 0;
+    transition-timing-function: cubic-bezier(.5,1.6,.4,.7);
+}
+.box .box-input .btn::before
+{
+    transform: scaleY(0);
+}
+.box .box-input .btn:hover::before
+{
+    transform: scaleY(1);
+}
+/* Dark Mode */
+label
+{
+    position: absolute;
+    right: 30px;
+    bottom: 30px;
+    border: 2px solid var(--secondary-color);
+    border-radius: 30px;
+}
+input[type="checkbox"]
+{
+    -webkit-appearance: none;
+    visibility: hidden;
+    display: none;
+}
+.check
+{
+    position: relative;
+    display: block;
+    width: 60px;
+    height: 30px;
+    cursor: pointer;
+    border-radius: 30px;
+    overflow: hidden;
+    transition: ease-in .5s;
+}
+.check::before
+{
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    background: var(--secondary-color);
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    transition: .5s;
+}
+input[type="checkbox"]:checked ~ .check::before
+{
+    transform: translateX(-50px);
+}
+.check::after
+{
+    content: "";
+    position: absolute;
+    top: 4px;
+    right:  4px;
+    background: #FFF;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    transition: .5s;
+    transform: translateX(50px);
+}
+input[type="checkbox"]:checked ~ .check::after
+{
+    transform: translateX(0px);
+}
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    .box
+    {
+        width: 90%;
+    }
+    .box .box-input
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .box .box-input .input-url
+    {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+    .buttons
+    {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .box .box-input .btn
+    {
+        width: 50%;
+        margin: 0;
+    }
+    .box .box-input .btn#copiar
+    {
+        margin-left: 10px;
+    }
+}
