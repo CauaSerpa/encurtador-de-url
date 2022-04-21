@@ -29,14 +29,7 @@ body
     justify-content: center;
     background: var(--primary-color);
     width: 100vw;
-    height: calc(100vh - 3.5rem);
-}
-/* Para desktop */
-@media screen and (min-width: 768px) {
-    body
-    {
-        height: 100vh;
-    }
+    height: 100vh;
 }
 .box
 {
@@ -192,6 +185,10 @@ input[type="checkbox"]:checked ~ .check::after
 }
 /* Media Queries */
 @media screen and (max-width: 768px) {
+    body
+    {
+        height: calc(100vh - 3.5rem);
+    }
     .box
     {
         width: 90%;
