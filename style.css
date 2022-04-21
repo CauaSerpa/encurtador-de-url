@@ -180,19 +180,6 @@ nav .logo .nav__logo img
     border-bottom: 2px solid var(--secondary-color);
     transition: .5s;
 }
-::placeholder 
-{
-    color: var(--secondary-color);
-    opacity: 1;
-}
-:-ms-input-placeholder 
-{
-    color: var(--secondary-color);
-}se--secondary-color
-::-ms-input-placeholder 
-{
-    color: var(--black);
-}
 .box .box-input .btn
 {
     position: relative;
