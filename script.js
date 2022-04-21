@@ -34,7 +34,13 @@ function encurtarUrl() {
 }
 //Dark Mode
 var icon = document.getElementById("icon");
+var logo = document.getElementById("logo");
 
 icon.onclick = function(){
     document.body.classList.toggle("dark-theme");
+    if(document.body.classList.contains("dark-theme")){
+        logo.src = "img/logo-dark.svg";
+    }else{
+        logo.src = "img/logo-light.svg";
+    }
 }
