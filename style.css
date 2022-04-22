@@ -285,6 +285,20 @@ input[type="checkbox"]:checked ~ .check::after
     {
         height: calc(100vh - 3.5rem);
     }
+    header
+    {
+        height: 3rem;
+    }
+    .nav__button .btn
+    {
+        padding: 0px 5px;
+        font-size: 18px;
+    }
+    .nav__logo img
+    {
+        width: 40px;
+        height: 40px;
+    }
     .box
     {
         width: 90%;
